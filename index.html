@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./public/styles.css">
+    <title></title>
+    <script src="./src/createDungeon.js"></script>
+    <script src="./src/drawDungeon.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <canvas id="backgroundCanvas" width="640" height="416"></canvas>
+      <canvas id="canvas" width="640" height="416"></canvas>
+    </div>
+    <script>
+      dungeonLvl = new CreateDungeonLvl
+      drawDungeon = new DrawDungeon
+      drawDungeon.drawLevel(dungeonLvl.create())
+    </script>
+  </body>
+</html>
