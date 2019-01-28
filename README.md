@@ -36,12 +36,14 @@ Array numbers:
 
 
 Notes:
-The edges of the dungeon are all enclosed
-Percentage chances based on available spots for room and doors (eg. doors need wall either side of them on one axis and empty on either side of the other axis)
+- The edges of the dungeon are all enclosed
+- Percentage chances based on available spots for room and doors (eg. doors need wall either side of them on one axis and empty on either side of the other axis to be created)
+- No items/halls/rooms/entrance or exit will spawn on the dungeon edges
+- Once one hall is created it chooses a random direct to create another, because of this it may go back on itself
 
 #### Example of array in use
 
-copy path and file name of `index.html` in browser
+copy path and file name of `index.html` in the browser
 
 Example screen shots below:
 
