@@ -2,7 +2,7 @@
 
 Returns a ready made dungeon based on settings.
 
-To use level creator:
+To use level creator to return a 2D 'dungeon' array:
 
 `dungeonLvl = new CreateDungeonLvl`
 
@@ -39,12 +39,14 @@ Notes:
 The edges of the dungeon are all enclosed
 Percentage chances based on available spots for room and doors (eg. doors need wall either side of them on one axis and empty on either side of the other axis)
 
-#### Example
+#### Example of array in use
 
 copy path and file name of `index.html` in browser
 
- ![Image description](./public/screenshot1.png)
+Example screen shots below:
 
- ![Image description](./public/screenshot2.png)
+ ![Image description](./public/ScreenShot1.png)
 
- ![Image description](./public/screenshot3.png)
+ ![Image description](./public/ScreenShot2.png)
+
+ ![Image description](./public/ScreenShot3.png)
