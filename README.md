@@ -22,7 +22,7 @@ Change defaults:
 
 `dungeonLvl = new CreateDungeonLvl(15, 15, 10, 40, false, 40, 15, 8)`
 
-creates a dungeon level 15x15, maximum hall length of 15, 40 halls in total, halls will always be 15 in length, 40% chance of 3x3 room created on an square created where available, 15% chance of door created where available, 8 items are randomly added)
+creates a dungeon level 15x15, maximum hall length of 10, 40 halls in total, halls will always be 10 in length (not up to but only 10 in length), 40% chance of 3x3 room created on an square (chance on squares where room can fit available), 15% chance of door created where available, 8 items are randomly added on empty squares
 
 Array numbers:
 ```
@@ -40,6 +40,7 @@ Notes:
 - Percentage chances based on available spots for room and doors (eg. doors need wall either side of them on one axis and empty on either side of the other axis to be created)
 - No items/halls/rooms/entrance or exit will spawn on the dungeon edges
 - Once one hall is created it chooses a random direct to create another, because of this it may go back on itself
+- Currently if an item is added it can be overwritten with an exit or entrance
 
 #### Example of array in use
 
