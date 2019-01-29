@@ -35,7 +35,7 @@ class CreateDungeonLvl {
     for (let h = 1; h < this.halls; h++ ) {
       setDirection = this.direction[Math.floor(Math.random() * 4)]
 
-      for (let hl = 1; hl < Math.floor(Math.random() * this.maxHallLength + 1); hl++) {
+      for (let hl = 1; hl < this.hallLength(); hl++) {
         drawingPoint[0] = drawingPoint[0] + setDirection[0]
         drawingPoint[1] = drawingPoint[1] + setDirection[1]
         if (drawingPoint[0] <= 0) drawingPoint[0] = 1
@@ -56,6 +56,7 @@ class CreateDungeonLvl {
       }
       this.exitPoint = drawingPoint
     }
+    return this.level
   }
 
   hallLength() {
@@ -80,18 +81,18 @@ class CreateDungeonLvl {
         this.checkDoor(x, y)
       }
     }
+    return this.level
   }
 
   checkItem(x, y) {
-    let placeItem = [this.itemCoordinate(this.height),
-                     this.itemCoordinate(this.width)]
-    if (this.level[placeItem[0]][placeItem[1]] === 0 && this.totalItems > 0) {
-      this.level[placeItem[0]][placeItem[1]] = 3
-      this.totalItems--
-    } else if (this.totalItems <= 0) {
-      return
-    } else {
-      this.checkItem(x, y)
+    let placeItem
+    while (this.totalItems > 0) {
+      placeItem = [this.itemCoordinate(this.height),
+                   this.itemCoordinate(this.width)]
+      if (this.level[placeItem[0]][placeItem[1]] === 0 || this.level[placeItem[0]][placeItem[1]] === 3) {
+        this.level[placeItem[0]][placeItem[1]] = 3
+        this.totalItems--
+      }
     }
   }
 
@@ -114,6 +115,7 @@ class CreateDungeonLvl {
 
   entrance() {
     this.level[this.startingPoint[0]][this.startingPoint[1]] = 4
+    return this.level
   }
 
   exit() {
@@ -130,6 +132,7 @@ class CreateDungeonLvl {
     } else {
       this.level[this.exitPoint[0]][this.exitPoint[1]] = 5
     }
+    return this.level
   }
 
   randomReturn(chance) {

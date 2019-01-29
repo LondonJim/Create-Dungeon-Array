@@ -53,3 +53,9 @@ Example screen shots below:
  ![Image description](./public/ScreenShot2.png)
 
  ![Image description](./public/ScreenShot3.png)
+
+ ## Testing
+
+ Jasmine 3.3.0
+
+ Run `SpecRunner.html` in browser
